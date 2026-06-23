@@ -1450,11 +1450,11 @@ const Dashboard = ({data,setTab,setData,onLogout}) => {
     h('div',{style:{padding:'14px 16px'}},
       h('div',{style:{display:'grid',gridTemplateColumns:'1fr 1fr 1fr',gap:9,marginBottom:9}},
         h(Stat,{label:'OS Abertas',   value:data.ordens.filter(o=>o.status==='aberta').length,           color:C.yellow, tab:'os'}),
-        h(Stat,{label:'Ag. Peças',    value:data.ordens.filter(o=>o.status==='aguard_pecas').length,     color:C.orange, tab:'os'}),
+        h(Stat,{label:'Aguardando Peças',    value:data.ordens.filter(o=>o.status==='aguard_pecas').length,     color:C.orange, tab:'os'}),
         h(Stat,{label:'Em Execução', value:data.ordens.filter(o=>o.status==='em_andamento').length,     color:C.accent, tab:'os'})
       ),
       h('div',{style:{display:'grid',gridTemplateColumns:'1fr 1fr 1fr',gap:9,marginBottom:9}},
-        h(Stat,{label:'Ag. Aprovação',value:data.ordens.filter(o=>o.status==='aguard_aprovacao').length, color:C.purple, tab:'os'}),
+        h(Stat,{label:'Aguardando Aprovação',value:data.ordens.filter(o=>o.status==='aguard_aprovacao').length, color:C.purple, tab:'os'}),
         h(Stat,{label:'Em Atraso',    value:data.ordens.filter(o=>o.status==='em_atraso').length,        color:C.red,    tab:'os'}),
         h(Stat,{label:'Concluídas',   value:data.ordens.filter(o=>['concluida','entregue'].includes(o.status)).length, color:C.green, tab:'os'})
       ),
@@ -1749,7 +1749,7 @@ function App() {
     {id:'produtos', label:'Produtos',  icon:'box'   },
     {id:'servicos', label:'Serviços',  icon:'clip'  },
     {id:'os',       label:'OS',        icon:'wrench'},
-    {id:'orc',      label:'Orç.',      icon:'dollar'},
+    {id:'orc',      label:'Orçamentos.',      icon:'dollar'},
     {id:'pdv',      label:'PDV',       icon:'pdv'   },
   ];
 
